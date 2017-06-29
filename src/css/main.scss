@@ -1,0 +1,59 @@
+@import "mq";
+@import "fonts";
+
+// Uncomment for embeds
+//@import "embed";
+
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+}
+
+.gv-quotes {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    clear: both;
+}
+
+.gv-quotes > h2 {
+    clear: both
+}
+
+.u-cf {
+    display: none;
+}
+
+.gv-speaker {
+    @include fs-data(3);
+    font-weight: 700;
+    color: black;
+}
+
+.gv-quote-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px dotted grey;
+    width: 40%;
+    clear: both;
+
+    &.gv-distance-0 {
+        float: initial !important;
+        margin-left: 20%;
+    }
+
+    &.gv-team-EU {
+        float: left;
+        border: 1px dotted royalblue;
+        
+    }
+
+    &.gv-team-UK {
+        float: right;
+        border: 1px dotted red;
+
+    }
+
+}
