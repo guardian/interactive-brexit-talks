@@ -4,7 +4,7 @@
     <h2>{{name}}</h2>
     <p class="gv-topic-intro">{{intro}}</p>
     {{#rows}}
-    <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}">
+    <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}" {{#responseTo}}data-prompt="{{responseTo}}"{{/responseTo}}>
         <div class="gv-quote">{{quote}}</div>
         <div class="gv-speaker">{{speaker}}</div>
         <div class="gv-datestring">{{datestring}}</div>

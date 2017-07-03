@@ -4,6 +4,7 @@ import rp from 'request-promise'
 import config from '../config.json'
 
 function maketopicarray (quotes,topics) {
+    console.log(quotes);
     topics.forEach(function (t){
         t.rows = quotes.filter(function(r){
             return r.topic == t.name;
