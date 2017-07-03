@@ -3,11 +3,9 @@ import Mustache from 'mustache'
 import rp from 'request-promise'
 import config from '../config.json'
 
-
-
-function maketopicarray (data) {
+function maketopicarray (quotes,topics) {
     var topicnames = [];
-    data.forEach(function(r){
+    quotes.forEach(function(r){
         if (!topicnames.some(function(tn) {
             return tn == r.topic;
         })) {
@@ -15,14 +13,14 @@ function maketopicarray (data) {
         }
     });
     console.log(topicnames);
-    var topics = [];
+    var xtopics = [];
     topicnames.forEach(function (tn){
-        topics.push({name: tn, rows: []})
+        xtopics.push({name: tn, rows: []})
     })
-    topics.forEach(function (t){
-        t.rows = data.filter(function(r){ return r.topic == t.name})
+    xtopics.forEach(function (t){
+        t.rows = quotes.filter(function(r){ return r.topic == t.name})
     })
-    return topics;
+    return xtopics;
 }
 
 
@@ -31,10 +29,9 @@ export async function render() {
          uri: config.docData,
          json: true
      });
-
-     var sheets = data.sheets.Sheet1;
-     console.log(sheets);
-     data = maketopicarray(sheets);
-     var html = Mustache.render(mainTemplate, data);
+     var quotes = data.sheets.quotes;
+     var topics = data.sheets.topics;
+     var renderdata = maketopicarray(quotes,topics);
+     var html = Mustache.render(mainTemplate, renderdata);
      return html;
  }
