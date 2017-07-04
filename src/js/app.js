@@ -11,8 +11,15 @@ boxes.forEach(function (b) {
         arrow.setAttribute("stroke", "#000");  
         arrow.setAttribute("stroke-width", "10");  
         var t = boxes.find(function(bb){return bb.dataset.id == b.dataset.prompt});
-        arrow.setAttribute("d", `M ${b.offsetLeft} ${b.offsetTop} L ${t.offsetLeft} ${t.offsetTop}`);
-        console.log(arrow);
+        console.log('b',b,'t',t);
+        b.insideTop = b.classList.contains("gv-team-UK") ? `${b.offsetLeft} ${b.offsetTop}` : `${(b.offsetLeft + b.offsetWidth)} ${b.offsetTop}` 
+        t.insideTop = t.classList.contains("gv-team-UK") ? `${t.offsetLeft} ${t.offsetTop}` : `${(t.offsetLeft + t.offsetWidth)} ${t.offsetTop}` 
+        b.insideBottom = b.classList.contains("gv-team-UK") ? `${b.offsetLeft} ${(b.offsetTop + b.offsetHeight)}` : `${(b.offsetLeft + b.offsetWidth)} ${(b.offsetTop + b.offsetHeight)}` 
+        t.insideBottom = t.classList.contains("gv-team-UK") ? `${t.offsetLeft} ${(t.offsetTop + t.offsetHeight)}` : `${(t.offsetLeft + t.offsetWidth)} ${(t.offsetTop + t.offsetHeight)}` 
+        
+        arrow.setAttribute("d", `M ${b.insideTop} L ${t.insideBottom}`);
+        //console.log(b);
+         //       console.log(arrow);
         svg.appendChild(arrow);
         svg.setAttribute("top", 0);
         outside.appendChild(svg);
