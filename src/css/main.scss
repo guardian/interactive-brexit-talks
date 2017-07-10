@@ -16,6 +16,8 @@
     padding-top: 20px;
     padding-bottom: 50px;
     clear: both;
+    background-color:   #ffffbb;
+    padding-left: 5px;
 }
 
 .gv-quotes > h2 {
@@ -32,11 +34,35 @@
     color: black;
 }
 
+.gv-row-wrapper {
+    display: inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+.gv-connector {
+    display: inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 1px;
+    width: 50%;
+    border-top: 1px dotted  black;
+}
+
+
+.gv-connector::before {
+    height: 30px;
+    width: 30px;
+    content: "|";
+    background-color:black;}
+
 .gv-quote-wrapper {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px dotted grey;
-    width: 40%;
+    border: 1px solid lightgrey;
+    border-radius: 4px 4px 4px 4px;
+    max-width: 80%;
     clear: both;
 
     &.gv-distance-0 {
@@ -46,13 +72,14 @@
 
     &.gv-team-EU {
         float: left;
-        border: 1px dotted royalblue;
-        
+       // border: 1px dotted royalblue;
+        background-color: #e3ffff;
     }
 
     &.gv-team-UK {
         float: right;
-        border: 1px dotted red;
+        //border: 1px dotted red;
+        background-color: white;
 
     }
 
