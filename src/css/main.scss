@@ -13,14 +13,26 @@
 }
 
 .gv-quotes {
+    overflow: hidden;
     padding-top: 20px;
     padding-bottom: 50px;
     clear: both;
-    background-color:   #ffffbb;
     padding-left: 5px;
 }
 
+.gv-chat-wrapper {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color:   #ffffbb;
+    overflow: hidden;
+    clear: both;
+}
+
 .gv-quotes > h2 {
+    clear: both
+}
+
+.gv-quotes > p {
     clear: both
 }
 
@@ -28,47 +40,30 @@
     display: none;
 }
 
-.gv-speaker {
+.gv-speaker, .gv-datestring {
     @include fs-data(3);
     font-weight: 700;
     color: black;
 }
 
-.gv-row-wrapper {
-    display: inline-block;
-    margin-left: 25%;
-    margin-right: 25%;
+.gv-speaker {
+       color: black;
+       display: inline-block;
 }
 
-
-.gv-connector {
+.gv-datestring {
     display: inline-block;
-    margin-left: 25%;
-    margin-right: 25%;
-    height: 1px;
-    width: 50%;
-    border-top: 1px dotted  black;
+    color: grey;
 }
-
-
-.gv-connector::before {
-    height: 30px;
-    width: 30px;
-    content: "|";
-    background-color:black;}
 
 .gv-quote-wrapper {
     margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid lightgrey;
     border-radius: 4px 4px 4px 4px;
-    max-width: 80%;
+    width: 80%;
     clear: both;
-
-    &.gv-distance-0 {
-        float: initial !important;
-        margin-left: 20%;
-    }
+    padding-left: 5px;
 
     &.gv-team-EU {
         float: left;
@@ -83,18 +78,4 @@
 
     }
 
-}
-
-svg {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-}
-
-svg path {
-    fill: #000;
-    stroke: #000;
-    stroke-width: 2px;
 }

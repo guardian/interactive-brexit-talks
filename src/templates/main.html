@@ -3,15 +3,15 @@
     {{#.}}
     <h2>{{name}}</h2>
     <p class="gv-topic-intro">{{intro}}</p>
+    <div class="gv-chat-wrapper">
     {{#rows}}
-        <div class="gv-arrow"></div>
-        <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}" {{#responseTo}}data-prompt="{{responseTo}}"
-            {{/responseTo}}>
+        <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}" >
             <div class="gv-quote">{{quote}}</div>
             <div class="gv-speaker">{{speaker}}</div>
             <div class="gv-datestring">{{datestring}}</div>
         </div>
-        {{#responseTo}}
-        <div class="gv-connector"></div> {{/responseTo}}
-    {{/rows}} {{/.}}
+    {{/rows}}
+    </div>
+    {{/.}}
+    
 </div>
