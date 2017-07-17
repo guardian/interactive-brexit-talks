@@ -2,9 +2,10 @@ import mainTemplate from './src/templates/main.html!text'
 import Mustache from 'mustache'
 import rp from 'request-promise'
 import config from '../config.json'
+import twemoji from 'twemoji'
 
 function maketopicarray (quotes,topics) {
-    console.log(quotes);
+//     console.log(quotes);
     topics.forEach(function (t){
         t.rows = quotes.filter(function(r){
             return r.topic == t.name;
@@ -23,5 +24,6 @@ export async function render() {
      var topics = data.sheets.topics;
      var renderdata = maketopicarray(quotes,topics);
      var html = Mustache.render(mainTemplate, renderdata);
+//     var ehtml = twemoji.parse(html);
      return html;
  }

@@ -1,5 +1,6 @@
 @import "mq";
 @import "fonts";
+@import "share";
 
 // Uncomment for embeds
 //@import "embed";
@@ -7,38 +8,254 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+$sequencing-colour: #197CAA;
+$citizens-colour:  #BB3A7F;
+$financial-colour: #66A998;
+$jurisdiction-colour: #7D0068;
+$trade-colour: #FFBB00;
+$security-colour: #333333;
+$other-colour: #DCDCDC;
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
 }
+
+
+
+
+.gv-chat-wrapper,.gv-intro,.gv-nav,.gv-topic-intro-text-wrapper,.gv-header {
+
+  max-width:740px;
+  // float:left;
+  display:block;
+  position:relative;
+  padding:0 10px;
+  margin-top:10px;
+  z-index:100;
+
+  @include mq(leftCol) {
+      margin-left: 160px;
+  }
+
+  @include mq(wide) {
+      margin-left: 240px;
+  }
+
+  @include mq(desktop, tablet) {
+      margin-left:20px;
+  }
+
+}
+
+.gv-topic-intro-text-wrapper,.gv-chat-wrapper {
+  @include mq(leftCol) {
+      margin-left: 70px;
+  }
+
+  @include mq(wide) {
+      margin-left: 150px;
+  }
+
+  @include mq(desktop, tablet) {
+      margin-left:20px;
+  }
+
+    
+}
+
+.gv-topic-intro-wrapper,.gv-chat-outer-wrapper {
+    max-width: 1100px;
+     @include mq(leftCol) {
+      margin-left: 90px;
+  }
+}
+
+.gv-chat-outer-wrapper {
+    background-color: #efefef;
+}
+
+
+
+.gv-quotes div, .gv-header, .gv-intro, .gv-nav {
+    padding: 5px 5px 10px 5px;
+}
+
+.header-share-container {
+background-color: #005689;
+
+}
+.gv-counter {
+position: relative;
+    right: -35px;
+    top: 10px;
+    z-index: 10;
+    background-color: #ff4242;
+    border-radius: 11px;
+    height: 1em;
+    width: 1em;
+    color: #fff;
+    @include fs-data(1)
+    padding-bottom: 1px;
+}
+
+.gv-arrows {
+    width: 100%;
+}
+
+.gv-header-wrapper {
+    background-color: #005689;
+    color: white;
+        &:after{
+            background-image:url("<%= path %>/assets/arrows.png");
+            background-repeat:no-repeat;
+            background-size:100%;
+            position: absolute;
+            right: 0;
+            content:'';
+            width:100%;
+            height: 100px;
+            vertical-align: baseline;
+            display: none;
+        }
+        img &{
+            width: 100%;
+        }
+}
+.gv-header h1 {
+    @include fs-textSans(2)
+    font-size: 3em;
+    line-height: 1em;
+    font-weight: 100;
+}
+
+.gv-nav-block {
+    display: inline-block;
+    @include fs-data(1);
+    text-align: center;
+    color: black;
+    & a {
+        color: black;
+    }
+}
+
+.gv-nav img {
+    width: 36px;
+    border: 10px solid;
+    border-radius: 76px;
+}
+
+.gv-topic-members:before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-image: url("<%= path %>/assets/avatar.svg");
+    background-size: 100%;
+    display:inline-block;
+    margin-right: 5px;
+}
+.gv-topic-activity:before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-image: url("<%= path %>/assets/time.svg");
+    background-size: 100%;
+    display:inline-block;
+    margin-right: 5px;
+}
+
+.gv-topic-status {
+    @include fs-textSans(2);
+    border-bottom: 1px solid white;
+}
+
+
+.gv-topic-intro-wrapper,.gv-nav img {
+
+
+
+    &.gv-topic-sequencing {
+    background-color: $sequencing-colour;
+    border-color: $sequencing-colour;
+    color: white;
+    }
+
+        &.gv-topic-citizens {
+    background-color: $citizens-colour;
+        border-color: $citizens-colour;
+
+    color: white;
+    }
+    &.gv-topic-trade {
+    background-color: $trade-colour;
+        border-color: $trade-colour;
+
+    color: #333;
+    }
+  &.gv-topic-other {
+    background-color: $other-colour;
+    border-color: $other-colour;
+    
+    color: #333;
+    }
+    &.gv-topic-jurisdiction {
+    background-color: $jurisdiction-colour;
+    border-color: $jurisdiction-colour;
+   
+        color: white;
+    }
+  &.gv-topic-financial {
+    background-color: $financial-colour;
+    border-color: $financial-colour;
+  
+    color: white;
+    }
+  &.gv-topic-security {
+    background-color: $security-colour;
+    border-color: $security-colour;
+   
+    color: white;
+    }
+
+}
+
+.emoji {
+    height: 1em;
+    display: inline;
+}
+
 
 .gv-quotes {
     overflow: hidden;
     padding-top: 20px;
     padding-bottom: 50px;
     clear: both;
-    padding-left: 5px;
+    padding-left: 0px;
 }
 
 .gv-chat-wrapper {
     padding-top: 20px;
     padding-bottom: 50px;
-    background-color:   #ffffbb;
+    background-color:   #f4f4f4;
     overflow: hidden;
     clear: both;
 }
 
 .gv-row-wrapper {
-    display: block;
+    display: flex;
+    &.gv-team-UK {
+    flex-direction: row-reverse;
+    }   
     clear: both;
 }
 
-.gv-quotes > h2 {
-    clear: both
+.gv-topic-intro-text-wrapper > h2 {
+    @include fs-headline(8);
+    clear: both;
 }
 
 .gv-quotes > p {
-    clear: both
+    clear: both;
 }
 
 .u-cf {
@@ -46,45 +263,49 @@
 }
 
 .gv-speaker, .gv-datestring {
-    @include fs-data(3);
-    font-weight: 700;
-    color: black;
+    color: #848484;
+    text-align: right;
+    .gv-team-UK &{
+        float: right;
+    }
 }
 
 .gv-speaker {
-       color: black;
        display: inline-block;
 }
 
 .gv-datestring {
     display: inline-block;
-    color: grey;
 }
 
-.gv-mugshot {
+
+.gv-mugshot-wrapper {
+    height: 100%;
+    top: 0px;
+    align-self: flex-end;
     position: relative;
     width: 15%;
-    display: inline-block;
-    &.gv-team-EU {
-    float: left;
-    }
-&.gv-team-UK {
-    float: right;
-}
 }
 
 
 
 .gv-mugshot img {
-    filter: grayscale(80%);
     position: relative;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 40px;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 30px;
     float: right;
     margin-top: 10px;
+    border: 1px solid #197caa;
 }
 
+.gv-quote {
+    background-color: white;
+     border: 1px solid white;
+    border-radius: 4px 4px 4px 4px;
+    padding: 5px;
+   
+}
 
 .gv-quote-wrapper {
     display: inline-block;
@@ -92,22 +313,20 @@
     margin-right: 2px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 4px 4px 4px 4px;
     width: 80%;
-    padding-left: 5px;
+     padding-left: 5px;
+   
+    @include fs-textSans(4)
 
     &.gv-team-EU {
         float: left;
        // border: 1px dotted royalblue;
-        background-color: #e3ffff;
     }
 
     &.gv-team-UK {
         float: right;
         //border: 1px dotted red;
-        background-color: white;
-
+   
     }
 
 }
