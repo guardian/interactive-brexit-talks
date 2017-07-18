@@ -291,12 +291,15 @@ position: relative;
     display: none;
 }
 
-.gv-speaker, .gv-datestring {
-    color: #848484;
+.gv-speaker , .gv-datestring  {
     text-align: right;
     .gv-team-UK &{
         float: right;
     }
+}
+
+.gv-speaker a, .gv-datestring a {
+    color: #848484;    
 }
 
 .gv-chat-opens {

@@ -1,14 +1,13 @@
 <div class="gv-content">
 
-
+{{#furniture}}
     <div class="gv-header-wrapper">
         <div class="gv-header">
-            <span class="gv-strap">Brexit</span>
-            <h1>Where are we up to in these Brexit talks?</h1>
-            <p class="gv-standfirst">Negotiations on the UK's withdrawal from the EU are happening on several fronts simultaneously, with multiple
-                seemingly contradictory positions being stated almost daily. At least on the UK side. Find ouggt what the
-                latest state of play is, and how the mood is changing</p>
-            <span class="gv-byline">Curated and emojified by Seán Clarke</span>
+            <span class="gv-strap">{{pagestrap}}</span>
+            <h1>{{headline}}</h1>
+            <p class="gv-standfirst">{{standfirst}}</p>
+            <div class="gv-byline">{{byline}}</div>
+            <div class="gv-datestamp">{{datestamp}}</div>
             <img class="gv-arrows" src="<%= path %>/assets/arrows.png" />
             <div class="header-share-container">
                 <button class="interactive-share" data-network="twitter"></button>
@@ -18,12 +17,11 @@
 
         </div>
     </div>
-    <div class="gv-intro">There are multiple tracks in the talks, to settle questions such as what happens to EU citizens already living in Britain,
-        and who will certify British medicines after Brexit
+    <div class="gv-intro">{{intro}}
     </div>
-
+{{/furniture}}
     <div class="gv-nav">
-        {{#.}}
+        {{#chat}}
         <div class="gv-nav-block">
             <div class="gv-nav-image-wrapper">
                 {{#newmessageflag}}
@@ -32,12 +30,12 @@
             </div>
             <div class="gv-nav-text"><a href="#{{name}}">{{shortname}}</a></div>
         </div>
-        {{/.}}
+        {{/chat}}
     </div>
 
     <div class="gv-quotes">
 
-        {{#.}}
+        {{#chat}}
         <div class="gv-topic-intro-wrapper gv-topic-{{name}}">
             <div class="gv-topic-intro-text-wrapper">
                 <span class="gv-strap"><a name="{{name}}"></a>{{strap}}</span>
@@ -60,7 +58,7 @@
                     {{/mugshot}}
                     <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}">
                         <div class="gv-quote">{{quote}}</div>
-                        <div class="gv-speaker">{{speaker}} {{datestring}}</div>
+                        <div class="gv-speaker"><a href="{{link}}">{{speaker}} {{datestring}}</a></div>
                         <div class="gv-datestring"></div>
                     </div>
                 </div>
@@ -69,7 +67,7 @@
 
             </div>
         </div>
-        {{/.}}
+        {{/chat}}
 
     </div>
 
