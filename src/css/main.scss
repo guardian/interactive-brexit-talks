@@ -309,6 +309,8 @@ position: relative;
     
 }
 
+
+
 .gv-speaker {
        display: inline-block;
 }
@@ -364,7 +366,7 @@ position: relative;
     width: 80%;
      padding-left: 5px;
    
-    @include fs-textSans(4)
+    @include fs-textSans(4);
 
     &.gv-team-EU {
         float: left;
@@ -377,4 +379,17 @@ position: relative;
    
     }
 
+}
+
+
+.c-advert {
+    display: flex;
+    justify-content: center;
+    background-color: guss-colour(white);
+
+    @include mq($from: tablet) {
+        .ad-slot--rendered {
+            margin: 20px 0 40px 0;
+        }
+    }
 }

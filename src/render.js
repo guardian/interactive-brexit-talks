@@ -25,6 +25,7 @@ export async function render() {
      var furniture = data.sheets.furniture;
      var chat = maketopicarray(quotes,topics);
      var renderdata = {furniture,chat};
+     console.log(renderdata);
      var html = Mustache.render(mainTemplate, renderdata);
 //     var ehtml = twemoji.parse(html);
      return html;
