@@ -1,0 +1,19 @@
+
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="2.48501866e-20 0 2.48501866e-20 13 13 13 13 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="Brexit-talks" transform="translate(-379.000000, -889.000000)">
+            <g id="Page-1-Copy-4" transform="translate(379.000000, 889.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M10.6365303,7.09040903 L6.51191819,7.47179126 L5.76198872,6.71544429 L6.20479549,1.18173484 L6.7961213,1.18173484 L7.20500705,6.29464034 L10.6365303,6.49908322 L10.6365303,7.09040903 Z M6.5,0 C2.90987306,0 0,2.90987306 0,6.49908322 C0,10.0892102 2.90987306,13 6.5,13 C10.0901269,13 13,10.0892102 13,6.49908322 C13,2.90987306 10.0901269,0 6.5,0 L6.5,0 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

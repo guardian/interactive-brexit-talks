@@ -192,7 +192,15 @@ position: relative;
 
 }
 
-.gv-topic-intro-wrapper,.gv-nav img {
+.gv-colour-emoji {
+    font-size: 40px;
+    border: 20px solid;
+    border-radius: 200px;
+}
+
+
+
+.gv-topic-intro-wrapper,.gv-nav img,.gv-colour-emoji {
 
 
     &.gv-topic-sequencing {
@@ -341,6 +349,8 @@ position: relative;
   color: transparent;
   text-shadow: 1px 1px 1px #444;
 }
+
+
 
 .gv-quote-wrapper {
     display: inline-block;

@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "mustache": "^2.3.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "twemoji": "^2.3.0"
   }
 }

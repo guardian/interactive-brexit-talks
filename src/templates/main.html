@@ -10,12 +10,12 @@
                 latest state of play is, and how the mood is changing</p>
             <span class="gv-byline">Curated and emojified by Seán Clarke</span>
             <img class="gv-arrows" src="<%= path %>/assets/arrows.png" />
-                <div class="header-share-container">
-            <button class="interactive-share" data-network="twitter"></button>
-            <button class="interactive-share" data-network="facebook"></button>
-            <button class="interactive-share" data-network="email"></button>
-        </div>
-    
+            <div class="header-share-container">
+                <button class="interactive-share" data-network="twitter"></button>
+                <button class="interactive-share" data-network="facebook"></button>
+                <button class="interactive-share" data-network="email"></button>
+            </div>
+
         </div>
     </div>
     <div class="gv-intro">There are multiple tracks in the talks, to settle questions such as what happens to EU citizens already living in Britain,
@@ -28,9 +28,9 @@
             <div class="gv-nav-image-wrapper">
                 {{#newmessageflag}}
                 <div class="gv-counter">{{newmessages}}</div>{{/newmessageflag}}
-                <div class="gv-nav-emoji"><a href="#{{name}}"><span class="gv-monochrome-emoji">{{emoji}}</span></a></div>
-                <div class="gv-nav-text"><a href="#{{name}}">{{shortname}}</a></div>
+                <div class="gv-nav-emoji gv-topic-{{name}}"><a href="#{{name}}"><span class="gv-colour-emoji gv-topic-{{name}}">{{emoji}}</span></a></div>
             </div>
+            <div class="gv-nav-text"><a href="#{{name}}">{{shortname}}</a></div>
         </div>
         {{/.}}
     </div>
@@ -48,26 +48,26 @@
             </div>
         </div>
         <div class="gv-chat-outer-wrapper">
-        <div class="gv-chat-wrapper">
-            <div class="gv-chat-opens">{{chatbegins}}</div>
-            {{#rows}}
-            <div class="gv-row-wrapper gv-team-{{team}}">
+            <div class="gv-chat-wrapper">
+                <div class="gv-chat-opens">{{chatbegins}}</div>
+                {{#rows}}
+                <div class="gv-row-wrapper gv-team-{{team}}">
 
-                {{#mugshot}}
-                <div class="gv-mugshot-wrapper">
-                    <div class="gv-mugshot gv-team-{{team}}"><img src="{{{mugshot}}}" /></div>
+                    {{#mugshot}}
+                    <div class="gv-mugshot-wrapper">
+                        <div class="gv-mugshot gv-team-{{team}}"><img src="{{{mugshot}}}" /></div>
+                    </div>
+                    {{/mugshot}}
+                    <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}">
+                        <div class="gv-quote">{{quote}}</div>
+                        <div class="gv-speaker">{{speaker}} {{datestring}}</div>
+                        <div class="gv-datestring"></div>
+                    </div>
                 </div>
-                {{/mugshot}}
-                <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}">
-                    <div class="gv-quote">{{quote}}</div>
-                    <div class="gv-speaker">{{speaker}} {{datestring}}</div>
-                    <div class="gv-datestring"></div>
-                </div>
+                {{/rows}}
+                <div class="gv-chat-opens">{{chatends}}</div>
+
             </div>
-            {{/rows}}
-                        <div class="gv-chat-opens">{{chatends}}</div>
-
-        </div>
         </div>
         {{/.}}
 
