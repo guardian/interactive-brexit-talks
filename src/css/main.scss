@@ -200,7 +200,7 @@ position: relative;
 
 
 
-.gv-topic-intro-wrapper,.gv-nav img,.gv-colour-emoji {
+.gv-topic-intro-wrapper,.gv-nav img,.gv-colour-emoji,.gv-mugshot img {
 
 
     &.gv-topic-sequencing {
@@ -332,7 +332,7 @@ position: relative;
     border-radius: 30px;
     float: right;
     margin-top: 10px;
-    border: 1px solid #197caa;
+    border: 1px solid;
 }
 
 .gv-quote {

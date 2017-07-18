@@ -40,7 +40,7 @@
         {{#.}}
         <div class="gv-topic-intro-wrapper gv-topic-{{name}}">
             <div class="gv-topic-intro-text-wrapper">
-                <span class="gv-strap"><a name="{{name}}"></a>Strap</span>
+                <span class="gv-strap"><a name="{{name}}"></a>{{strap}}</span>
                 <h2>{{displayname}}</h2>
                 <div class="gv-topic-status"><span class="gv-topic-members">{{members}} members</span> <span class="gv-topic-activity">Last update {{lastupdate}}</span>
                 </div>
@@ -55,7 +55,7 @@
 
                     {{#mugshot}}
                     <div class="gv-mugshot-wrapper">
-                        <div class="gv-mugshot gv-team-{{team}}"><img src="{{{mugshot}}}" /></div>
+                        <div class="gv-mugshot gv-team-{{team}}"><img class="gv-topic-{{topic}}" src="{{{mugshot}}}" /></div>
                     </div>
                     {{/mugshot}}
                     <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}">
