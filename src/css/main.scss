@@ -335,6 +335,13 @@ position: relative;
    
 }
 
+.gv-monochrome-emoji {
+  font-size: 6em;  
+  background-color: white;
+  color: transparent;
+  text-shadow: 1px 1px 1px #444;
+}
+
 .gv-quote-wrapper {
     display: inline-block;
     margin-left: 2px;

@@ -28,7 +28,8 @@
             <div class="gv-nav-image-wrapper">
                 {{#newmessageflag}}
                 <div class="gv-counter">{{newmessages}}</div>{{/newmessageflag}}
-                <img class="gv-topic-{{name}}" src="<%= path %>/assets/{{name}}.png" /><a href="#{{name}}">{{shortname}}</a>
+                <div class="gv-nav-emoji"><a href="#{{name}}"><span class="gv-monochrome-emoji">{{emoji}}</span></a></div>
+                <div class="gv-nav-text"><a href="#{{name}}">{{shortname}}</a></div>
             </div>
         </div>
         {{/.}}
