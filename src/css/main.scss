@@ -291,6 +291,13 @@ position: relative;
     }
 }
 
+.gv-chat-opens {
+    color: #848484;
+    @include fs-textSans(2);
+    text-align: center;
+    
+}
+
 .gv-speaker {
        display: inline-block;
 }
