@@ -7,6 +7,14 @@ $darkGrey: #767676;
 $midGrey: #DCDCDC;
 $grey: #eaeaea;
 
+.ios,
+.windows,
+.android {
+    .e-content__related-content {
+        margin: 0;
+    }
+}
+
 .e-content__related {
     background-color:#fff;
     border-top: solid 1px rgb(75, 198, 223);
