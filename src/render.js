@@ -22,7 +22,10 @@ export async function render() {
      });
      var quotes = data.sheets.quotes;
      var topics = data.sheets.topics;
-     var renderdata = maketopicarray(quotes,topics);
+     var furniture = data.sheets.furniture;
+     var chat = maketopicarray(quotes,topics);
+     var renderdata = {furniture,chat};
+     console.log(renderdata);
      var html = Mustache.render(mainTemplate, renderdata);
 //     var ehtml = twemoji.parse(html);
      return html;

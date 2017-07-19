@@ -394,11 +394,17 @@ $other-colour: #DCDCDC;
     }
 }
 
+.gv-speaker a, .gv-datestring a {
+    color: #848484;    
+}
+
 .gv-chat-opens {
     color: #848484;
     @include fs-textSans(2);
     text-align: center;
 }
+
+
 
 .gv-speaker {
     margin-top: 5px;
@@ -434,7 +440,7 @@ $other-colour: #DCDCDC;
     border-radius: 40px;
     float: right;
     margin-top: 10px;
-    border: 2px solid #197caa;
+    border: 2px solid;
 }
 
 .gv-quote {
@@ -462,11 +468,26 @@ $other-colour: #DCDCDC;
     width: 80%;
     padding-left: 5px;
     line-height: 20px!important;
-    @include fs-textSans(4) &.gv-team-EU {
+    @include fs-textSans(4);
+     &.gv-team-EU {
         float: left; // border: 1px dotted royalblue;
     }
 
     &.gv-team-UK {
         float: right; //border: 1px dotted red;
+    }
+
+}
+
+
+.c-advert {
+    display: flex;
+    justify-content: center;
+    background-color: guss-colour(white);
+
+    @include mq($from: tablet) {
+        .ad-slot--rendered {
+            margin: 20px 0 40px 0;
+        }
     }
 }
