@@ -7,13 +7,24 @@
 //@import "embed";
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
-$sequencing-colour: #BB3A7F;
-$citizens-colour: #69D1CA;
-$financial-colour: #FDADBA;
+$sequencing-colour: #FDADBA;
+$citizens-colour: #aad8f1;
+$financial-colour: #69D1CA;
 $jurisdiction-colour: #FFBB00;
 $trade-colour: #4BC6DF;
 $security-colour: #FF9B0B;
-$other-colour: #DCDCDC;
+$other-colour: #bdbdbd;
+
+
+.ios,
+.windows,
+.android {
+    .gv-header h1,
+    .gv-topic-intro-text-wrapper>h2 {
+        font-weight: normal;
+        margin: 0;
+    }
+}
 
 .element-atom,
 .interactive-atom {
@@ -108,7 +119,7 @@ body {
 .gv-topic-intro-wrapper,
 .gv-chat-outer-wrapper {
     max-width: 1100px;
-    margin-bottom: 50px; // @include mq(leftCol) {
+    margin-bottom: 40px; // @include mq(leftCol) {
     //     margin-left: 90px;
     // }
 }
@@ -144,7 +155,6 @@ body {
 }
 
 .gv-datestamp {
-    @include fs-textSans(4);
     padding-left: 5px;
     font-size: 16px;
     line-height: 14px;
@@ -153,15 +163,13 @@ body {
 
 .gv-nav {
     position: relative;
-    top: -70px;
+    top: -90px;
 }
 
 .gv-nav-text {
     @include fs-textSans(4);
-    margin-top: 5px;
-    @include mq($from: desktop) {
-        margin-top: 10px;
-    }
+    margin-top: 30px;
+    
 }
 
 .header-share-container {
@@ -172,7 +180,7 @@ body {
 .gv-counter {
     position: relative;
     right: -55px;
-    top: 25px;
+    top: 45px;
     z-index: 10;
     background-color: #ff4242;
     border-radius: 20px;
@@ -275,10 +283,11 @@ body {
     display: inline-block;
     @include fs-data(1);
     text-align: center;
-    color: black;
-    margin: 0 15px 10px 0;
+    color: black; // margin: 0 15px 10px 0;
+    margin: 0 3px 0px 0;
     & a {
         color: black;
+        text-decoration: none;
         &:hover {
             text-decoration: none;
             svg {
@@ -317,25 +326,7 @@ body {
     margin-right: 5px;
 }
 
-.gv-topic-sequencing .gv-topic-members:before {
-    content: '';
-    height: 12px;
-    width: 12px;
-    background-image: url("<%= path %>/assets/avatar-white.svg");
-    background-size: 100%;
-    display: inline-block;
-    margin-right: 5px;
-}
 
-.gv-topic-sequencing .gv-topic-activity:before {
-    content: '';
-    height: 12px;
-    width: 12px;
-    background-image: url("<%= path %>/assets/time-white.svg");
-    background-size: 100%;
-    display: inline-block;
-    margin-right: 5px;
-}
 
 .gv-topic-status {
     margin-top: 5px;
@@ -348,14 +339,13 @@ body {
     }
 }
 
-.gv-topic-sequencing .gv-topic-status {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
+
 
 
 .gv-topic-intro {
+    font-size: 15px;
     line-height: 23px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .gv-topic-intro-wrapper {
@@ -372,10 +362,15 @@ body {
     height: 80px;
     position: relative;
     span {
-        position: absolute;
-        top: 36px;
-        left: 22px;
+        position: relative;
+        top: 60px;
         z-index: 9;
+    }
+
+    &.gv-topic-sequencing {
+        .svg-fill {
+            fill: $sequencing-colour;
+        }
     }
 
     &.gv-topic-citizens {
@@ -414,7 +409,7 @@ body {
 
     &.gv-topic-sequencing {
         background-color: $sequencing-colour;
-        color: white;
+        color: #333;
     }
 
     &.gv-topic-citizens {
@@ -456,7 +451,6 @@ body {
 .gv-quotes {
     overflow: hidden;
     padding-top: 20px;
-    padding-bottom: 50px;
     clear: both;
     @include mq($from: leftCol) {
         padding-left: 0px;
@@ -465,8 +459,8 @@ body {
 
 .gv-chat-wrapper {
     margin-top: 0;
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: 20px;
     background-color: #f4f4f4;
     overflow: hidden;
     clear: both;
@@ -479,6 +473,7 @@ body {
 .gv-row-wrapper {
     display: flex;
     margin-bottom: 5px;
+
     &.gv-team-UK {
         flex-direction: row-reverse;
     }
@@ -523,8 +518,8 @@ body {
 }
 
 .gv-chat-opens {
-    color: #848484;
-    @include fs-textSans(2);
+    color: #333;
+    @include fs-textSans(4);
     text-align: center;
 }
 
@@ -570,34 +565,34 @@ body {
     float: right;
     margin-top: 10px;
     border: 2px solid;
-        &.gv-topic-citizens {
-    
-            border-color: $citizens-colour;
-}
+    &.gv-topic-citizens {
+
+        border-color: $citizens-colour;
+    }
     &.gv-topic-trade {
-    
-            border-color: $trade-colour;
-}
+
+        border-color: $trade-colour;
+    }
     &.gv-topic-other {
-    
-            border-color: $other-colour;
-}
+
+        border-color: $other-colour;
+    }
     &.gv-topic-jurisdiction {
-    
-            border-color: $jurisdiction-colour;
-}
+
+        border-color: $jurisdiction-colour;
+    }
     &.gv-topic-financial {
-    
-            border-color: $financial-colour;
-}
+
+        border-color: $financial-colour;
+    }
     &.gv-topic-security {
-    
-            border-color: $security-colour;
-        }
-        &.gv-topic-sequencing {
-    
-            border-color: $sequencing-colour;
-        }
+
+        border-color: $security-colour;
+    }
+    &.gv-topic-sequencing {
+
+        border-color: $sequencing-colour;
+    }
     @include mq($from: desktop) {
         max-width: 60px;
         max-height: 60px;
@@ -652,3 +647,7 @@ body {
     }
 }
 
+.c-advert {
+    margin-top: -10px;
+    margin-bottom: 30px;
+}

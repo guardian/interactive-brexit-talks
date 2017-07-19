@@ -2,17 +2,17 @@ $black: #161616;
 $midBlack: #333333;
 $white: #fff;
 $yellow: #fb0;
-$lightGrey: #BDBDBD;
+$lightGrey: #767676;
 $darkGrey: #767676;
 $midGrey: #DCDCDC;
 $grey: #eaeaea;
 
 .e-content__related {
-    background-color:#e6e6e6;
+    background-color:#fff;
+    border-top: solid 1px rgb(75, 198, 223);
     max-width: 1300px;
-
     margin: 0 auto;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     @include mq($until: wide) {
         width:100%;
     }
@@ -26,7 +26,7 @@ $grey: #eaeaea;
     @include mq($until: tablet) {
         padding: 0;
         max-width: 100%;
-        margin: 30px 0 30px;
+        padding:5px 0 30px;
     }
     h2 {
         font-size: 22px;
@@ -55,25 +55,24 @@ $grey: #eaeaea;
     }
     &-content {
         //ul
-        border-top:1px solid #fff;
         padding-top:20px;
         margin: 0;
         margin-left: 240px;
         max-width: 940px;
         font-size: 0;
         display: block;
+        background: #fff;
         @include mq($until: wide) {
             margin-left: 160px;
             width:calc(100%-900px);
         }
         @include mq($until: leftCol) {
-            margin-left: -10px;
+            margin-left: 0px;
         }
         @include mq($until: desktop) {
             width: 700px;
         }
         @include mq($until: tablet) {
-            float: right;
             width: 94%;
             margin: 0 3%;
         }
@@ -97,12 +96,12 @@ $grey: #eaeaea;
                         left: 0;
                         width: 1px;
                         height: 100%;
-                        border-left: 1px solid #333;
+                        border-left: 1px solid #dfdfdf;
                     }
                 }
             }
             &:hover .e-content__related-content-item-wrap {
-                background: rgba(51, 51, 51, 0.3);
+                background: rgba(51, 51, 51, 0.1);
             }
         }
         &-item {
@@ -111,10 +110,10 @@ $grey: #eaeaea;
                 padding-bottom: 15px;
             }
             &-wrap {
-                background: rgba(51, 51, 51, 1);
-                border-top: solid 1px $yellow;
+                background-color: rgb(241, 241, 241);
+                border-top: solid 1px rgb(75, 198, 223);
                 margin: 0 10px;
-                height: 227px;
+                height: 240px;
                 overflow: hidden;
                 @include mq($until: tablet) {
                     height: 84px;
@@ -152,22 +151,21 @@ $grey: #eaeaea;
                     }
                     @include mq($until: mobileLandscape) {
                         padding: 0 5px 2px;
-                        width: 45%;
+                        width: 50%;
                     }
                     &-caption {
-
-                        color: $grey;
+                        color: #333;
                         display: inline-block;
                         font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
                         font-weight: 500;
                         font-size: 16px;
                         line-height: 20px;
-                        margin: 0 0 5px;
+                        margin: 5px 0;
                         @include mq($until: tablet) {
                             font-size: 14px;
                             line-height: 18px;
                             word-wrap: break-word;
-                            padding-top: 3px;
+                            margin: 3px 0;
                         }
                     }
                     &-date {
