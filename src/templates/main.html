@@ -108,3 +108,27 @@
 </div>
 
 </div>
+
+<div class="mainTop">
+<div class="e-content__related">
+    <h2>more stories</h2>
+    <ul class="e-content__related-content">
+
+      {{#related}}
+        <a href="{{webUrl}}">
+            <li class="e-content__related-content-item">
+                <div class="e-content__related-content-item-wrap">
+                    <div class="e-content__related-content-item-wrap-image">
+                      <div class="e-content__related-content-item-wrap-image-container" style="background-image:url('{{fields.thumbnail}}');"></div>
+                    </div>
+                    <div class="e-content__related-content-item-wrap-copy">
+                        <p class="e-content__related-content-item-wrap-copy-caption">{{webTitle}}</p>
+                        <p class="e-content__related-content-item-wrap-copy-date">{{datestring}}</p>
+                    </div>
+                </div>
+            </li>
+        </a>
+      {{/related}}
+    </ul>
+</div>
+</div>

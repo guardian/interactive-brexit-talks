@@ -1,6 +1,7 @@
 @import "mq";
 @import "fonts";
 @import "share";
+@import "related";
 
 // Uncomment for embeds
 //@import "embed";
@@ -569,6 +570,34 @@ body {
     float: right;
     margin-top: 10px;
     border: 2px solid;
+        &.gv-topic-citizens {
+    
+            border-color: $citizens-colour;
+}
+    &.gv-topic-trade {
+    
+            border-color: $trade-colour;
+}
+    &.gv-topic-other {
+    
+            border-color: $other-colour;
+}
+    &.gv-topic-jurisdiction {
+    
+            border-color: $jurisdiction-colour;
+}
+    &.gv-topic-financial {
+    
+            border-color: $financial-colour;
+}
+    &.gv-topic-security {
+    
+            border-color: $security-colour;
+        }
+        &.gv-topic-sequencing {
+    
+            border-color: $sequencing-colour;
+        }
     @include mq($from: desktop) {
         max-width: 60px;
         max-height: 60px;
@@ -622,3 +651,4 @@ body {
         }
     }
 }
+
