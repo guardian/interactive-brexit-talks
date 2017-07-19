@@ -13,6 +13,8 @@ console.log(obj.root.children[0].children.filter(function(c){return c.name == "i
 
 var quotes = Array.from(document.querySelectorAll('.gv-quote'));
 
+//spurious change
+
 // emojiSupported function borrowed from here: https://codepen.io/nicknish/pen/jWzMZG
 var emojiSupported = (function() { 
   var node = document.createElement('canvas');
