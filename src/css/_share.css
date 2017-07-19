@@ -8,20 +8,21 @@
     outline: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 26px;
-    border:1px solid white;
-    background-color:transparent;
+    background-size: 32px;
 
     &[data-network='facebook'] {
         background-image: url('<%= path %>/assets/img/facebook.svg');
+        background-color: #3067a3;
     }
 
     &[data-network='twitter'] {
         background-image: url('<%= path %>/assets/img/twitter.svg');
+        background-color: #03b3ee;
     }
 
     &[data-network='email'] {
         background-image: url('<%= path %>/assets/img/mail.svg');
+        background-color: #767676;
     }
 }
 
