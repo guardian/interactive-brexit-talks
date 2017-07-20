@@ -15,6 +15,10 @@ $grey: #eaeaea;
     }
 }
 
+.ios ul.e-content__related, .android ul.e-content__related {
+    padding-left: 10px;
+}
+
 .e-content__related {
     background-color:#fff;
     border-top: solid 1px rgb(75, 198, 223);
