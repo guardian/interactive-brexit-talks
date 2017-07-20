@@ -12,11 +12,8 @@ $grey: #eaeaea;
 .android {
     .e-content__related-content {
         margin: 0;
+        padding-left: 10px;
     }
-}
-
-.ios ul.e-content__related, .android ul.e-content__related {
-    padding-left: 10px;
 }
 
 .e-content__related {
