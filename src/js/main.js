@@ -1,6 +1,6 @@
 import shares from './share'
 
-let shareFn = shares('Where are we up to in these Brexit talks', 'https://gu.com/p/6jmx8', '');
+let shareFn = shares('Where are we up to in these Brexit talks?', 'https://gu.com/p/6mgzm', '');
 
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');

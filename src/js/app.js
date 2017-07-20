@@ -1,17 +1,18 @@
+/*
 import twemoji from 'twemoji'
 //import req from 'browser-request'
 //import xmlparse from 'xml-parser'
 
-/*
+
 req("https://www.theguardian.com/politics/eu-referendum/rss", function(err,response,body)
 {
     if (err || window.location.match("")) 
 var obj = xmlparse(body);
 console.log(obj.root.children[0].children.filter(function(c){return c.name == "item"}))
 })
-*/
 
-var quotes = Array.from(document.querySelectorAll('.gv-quote'));
+var icons = [].slice.call(document.querySelectorAll(".gv-colour-emoji"));
+console.log(icons);
 
 // emojiSupported function borrowed from here: https://codepen.io/nicknish/pen/jWzMZG
 var emojiSupported = (function() { 
@@ -27,9 +28,10 @@ var emojiSupported = (function() {
 })();
 
 if (!emojiSupported) {
-    quotes.map(function(q){
+    icons.map(function(q){
         q.innerHTML = twemoji.parse(q.innerHTML);
         console.log('replacing emoji with pix');
     })
 }  else {console.log('emoji supported')}
 
+*/

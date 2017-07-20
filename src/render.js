@@ -1,14 +1,18 @@
 import mainTemplate from './src/templates/main.html!text'
 import Mustache from 'mustache'
 import rp from 'request-promise'
-import fetch from 'fetch'
+//import fetch from 'fetch'
 import config from '../config.json'
 import twemoji from 'twemoji'
-import fs from 'fs'
+//import fs from 'fs'
 import xmlparse from 'xml-parser'
 
 function maketopicarray (quotes,topics) {
-//     console.log(quotes);
+
+    quotes.map(function(q){
+        q.quote = twemoji.parse(q.quote);
+    })  
+    console.log(quotes[0]);
     topics.forEach(function (t){
         t.rows = quotes.filter(function(r){
             return r.topic == t.name;
@@ -35,10 +39,7 @@ async function getRelated() {
 
 export async function render() {
 
-    let related = await getRelated();
-
-    console.log(related);
-   
+    let related = await getRelated();  
      var data = await rp({
          uri: config.docData,
          json: true
@@ -47,9 +48,12 @@ export async function render() {
      var topics = data.sheets.topics;
      var furniture = data.sheets.furniture;
      var chat = maketopicarray(quotes,topics);
+     //var xchat = twemoji.parse(chat);
+     //console.log(xchat);
      var renderdata = {furniture,chat,related};
      //console.log(renderdata);
      var html = Mustache.render(mainTemplate, renderdata);
-//     var ehtml = twemoji.parse(html);
+     var ehtml = twemoji.parse(html);
+  //   console.log(ehtml);
      return html;
  }
