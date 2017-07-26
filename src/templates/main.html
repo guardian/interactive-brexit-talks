@@ -27,7 +27,7 @@
         <div class="gv-nav-block">
         <a href="#{{name}}">
             <div class="gv-nav-image-wrapper">
-                <div class="gv-counter gv-topic-{{name}} {{^newmessageflag}}gv-hide{{/newmessageflag}}">{{newmessages}}</div>
+                <div class="gv-counter gv-topic-{{name}} {{^newmessageflag}}gv-empty{{/newmessageflag}}">{{newmessages}}</div>
                 <div class="gv-nav-emoji gv-topic-{{name}}"><span class="gv-colour-emoji gv-topic-{{name}}">{{{emoji}}}</span>
                 <svg  width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g class="svg-fill" id="Rules-Copy-2" transform="translate(-229.000000, -292.000000)" stroke="#fff" stroke-width="1.5" fill="#BB3A7F"> <g id="Group-6-Copy-2" transform="translate(230.000000, 288.000000)"> <circle id="Oval-Copy-2" cx="40" cy="45" r="40"></circle> </g> </g> </g> </svg>
                 </div>
@@ -59,14 +59,14 @@
             <div class="gv-chat-wrapper">
                 <div class="gv-chat-opens">{{chatbegins}}</div>
                 {{#rows}}
-                <div class="gv-row-wrapper gv-team-{{team}}">
+                <div class="gv-row-wrapper gv-team-{{team}}" data-id="{{datetime}}">
 
                     {{#mugshot}}
                     <div class="gv-mugshot-wrapper">
                         <div class="gv-mugshot gv-team-{{team}}"><img class="gv-topic-{{topic}}" src="{{{mugshot}}}" /></div>
                     </div>
                     {{/mugshot}}
-                    <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{idnum}}">
+                    <div class="gv-quote-wrapper gv-distance-{{distance}} gv-team-{{team}}" data-id="{{datetime}}">
                         <div class="gv-quote">{{{quote}}}</div>
                         <div class="gv-speaker"><a href="{{link}}">{{speaker}} {{datestring}}</a></div>
                         <div class="gv-datestring"></div>

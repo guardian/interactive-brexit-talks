@@ -11,6 +11,18 @@ function maketopicarray(quotes, topics) {
     return topics;
 }
 
+function hideOlderMessages() {
+    var today = new Date();
+    var quotes = [].slice.apply(document.querySelectorAll('.gv-row-wrapper'));
+    quotes.map(function(q){
+        var quotedate = Date.parse(q.getAttribute('data-id'));
+        console.log(quotedate);
+        if (quotedate < Date.parse('Thu 6 Jul 2017')){
+            q.classList.add('gv-hide');
+        }
+    })
+}
+
 function updateRecentMessages(lastvisit) {
     var today = new Date();
     var lastvisitdate = new Date(lastvisit);
@@ -68,3 +80,6 @@ if (typeof (Storage) !== "undefined") {
     console.log('no web storage');
     // Sorry! No Web Storage support..
 }
+
+
+hideOlderMessages();
