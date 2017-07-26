@@ -60,8 +60,8 @@ function updateRecentMessages(lastvisit) {
 if (typeof(Storage) !== "undefined") {
     var lastvisit = localStorage.getItem('gv-last-visit');
     if (lastvisit) {
-        updateRecentMessages('Thu 6 Jul 2017');
-//        updateRecentMessages(lastvisit);
+    //    updateRecentMessages('Thu 6 Jul 2017');
+        updateRecentMessages(lastvisit);
     } else   {
         console.log('setting last visit')
         localStorage.setItem('gv-last-visit', new Date())};
