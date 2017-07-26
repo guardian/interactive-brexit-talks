@@ -7,7 +7,6 @@ let shareFn = shares('Where are we up to in these Brexit talks?', 'https://gu.co
     shareEl.addEventListener('click', () => shareFn(network));
 });
 
-
 var el = document.createElement('script');
 el.src = '<%= path %>/app.js';
 document.body.appendChild(el);

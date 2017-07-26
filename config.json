@@ -1,5 +1,6 @@
 {
     "title": "Brexit talks",
-    "docData": "https://interactive.guim.co.uk/docsdata-test/1PfnIvwfM9GghQGdY0mb57WtwxyhkO9KoNA_LDxacTWg.json",
+    "docDataJson": "https://interactive.guim.co.uk/docsdata-test/1PfnIvwfM9GghQGdY0mb57WtwxyhkO9KoNA_LDxacTWg.json",
+    "docData": "https://docs.google.com/spreadsheets/d/1PfnIvwfM9GghQGdY0mb57WtwxyhkO9KoNA_LDxacTWg/edit?usp=drivesdk",
     "path": "2017/06/brexit-talks"
 }

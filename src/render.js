@@ -41,7 +41,7 @@ export async function render() {
 
     let related = await getRelated();  
      var data = await rp({
-         uri: config.docData,
+         uri: config.docDataJson,
          json: true
      });
      var quotes = data.sheets.quotes;
