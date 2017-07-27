@@ -275,7 +275,7 @@ body {
 
 .gv-nav-emoji {
     svg {
-        transition: all .2s ease-in-out;
+        transition: all .2s linear-out;
     }
 }
 
@@ -468,6 +468,22 @@ body {
     }
 }
 
+.gv-more-messages {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: calc(50% - 100px);
+    margin-right: calc(50% - 100px);
+    background-color:darkgrey;
+    color: white;
+    @include fs-textSans(3);
+    padding-left:20px;
+    border-radius: 5px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
 .gv-row-wrapper {
     display: flex;
     margin-bottom: 5px;
@@ -476,6 +492,12 @@ body {
         flex-direction: row-reverse;
     }
     clear: both;
+    opacity: 1;
+      -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+
 }
 
 .gv-topic-intro-text-wrapper>h2 {
@@ -501,9 +523,24 @@ body {
     display: none;
 }
 
+
 .gv-empty {
     opacity: 0;
+       -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
 }
+
+.gv-quick-empty {
+    opacity: 0;
+       -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .22s linear;
+}
+
+
 
 .gv-speaker,
 .gv-datestring {

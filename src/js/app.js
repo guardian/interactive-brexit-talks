@@ -11,17 +11,6 @@ function maketopicarray(quotes, topics) {
     return topics;
 }
 
-function hideOlderMessages() {
-    var today = new Date();
-    var quotes = [].slice.apply(document.querySelectorAll('.gv-row-wrapper'));
-    quotes.map(function(q){
-        var quotedate = Date.parse(q.getAttribute('data-id'));
-        console.log(quotedate);
-        if (quotedate < Date.parse('Thu 6 Jul 2017')){
-            q.classList.add('gv-hide');
-        }
-    })
-}
 
 function updateRecentMessages(lastvisit) {
     var today = new Date();
@@ -44,11 +33,10 @@ function updateRecentMessages(lastvisit) {
             var thistopiccounter = counters.find(function (c) {
                 return c.classList.contains(`gv-topic-${t.name}`);
             })
-            console.log(thistopiccounter);
             if (t.new == 0) {
-                thistopiccounter.classList.add('gv-hide')
+                thistopiccounter.classList.add('gv-empty')
             } else {
-                thistopiccounter.classList.remove('gv-hide');
+                thistopiccounter.classList.remove('gv-empty');
                 thistopiccounter.innerHTML = t.new;
             }
 
@@ -82,4 +70,3 @@ if (typeof (Storage) !== "undefined") {
 }
 
 
-hideOlderMessages();

@@ -12,11 +12,18 @@ function maketopicarray (quotes,topics) {
     quotes.map(function(q){
         q.quote = twemoji.parse(q.quote);
     })  
-    console.log(quotes[0]);
     topics.forEach(function (t){
         t.rows = quotes.filter(function(r){
             return r.topic == t.name;
         })
+        if (t.rows.length > 7) {
+        t.rows.map(function(r){
+            if (t.rows.indexOf(r) < (t.rows.length - 7)) {
+                r.hideAtFirst = true;
+                t.expanded = true;
+            }
+        })
+        }
     })
     return topics;
 }

@@ -58,8 +58,9 @@
         <div class="gv-chat-outer-wrapper">
             <div class="gv-chat-wrapper">
                 <div class="gv-chat-opens">{{chatbegins}}</div>
+                {{#expanded}}<div class="gv-more-messages gv-topic-{{name}}" data-topic="{{name}}">Show earlier statements</div>{{/expanded}}
                 {{#rows}}
-                <div class="gv-row-wrapper gv-team-{{team}}" data-id="{{datetime}}">
+                <div class="gv-row-wrapper gv-team-{{team}} gv-topic-{{topic}} {{#hideAtFirst}}gv-hide{{/hideAtFirst}}" data-id="{{datetime}}">
 
                     {{#mugshot}}
                     <div class="gv-mugshot-wrapper">
