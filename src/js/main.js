@@ -4,6 +4,12 @@ let shareFn = shares('Where are we up to in these Brexit talks?', 'https://gu.co
 
 
 function expand(button,topic) {
+               if (window.ga) {
+        window.ga('create', 'UA-78705427-1', 'auto');
+        window.ga('set', 'dimension3', 'theguardian.com' );
+        window.ga("send", "event", "interactives", "expand", `expand topic ${topic}`);
+        }
+
     var quotes = [].slice.apply(document.querySelectorAll('.gv-row-wrapper'));
     var expandenda = quotes.filter(function(q){
         return q.classList.contains(`gv-topic-${topic}`) && q.classList.contains('gv-hide');
