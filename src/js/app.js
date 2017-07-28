@@ -49,7 +49,12 @@ function updateRecentMessages(lastvisit) {
     if (today.toDateString() == lastvisitdate.toDateString()) {
         console.log('last visit today; doing nothing')
     } else {
-        localStorage.setItem('gv-last-visit', today)
+        localStorage.setItem('gv-last-visit', today);
+   if (parentwindow.ga) {
+        parentwindow.ga('create', 'UA-78705427-1', 'auto');
+        parentwindow.ga('set', 'dimension3', 'theguardian.com' );
+        parentwindow.ga("send", "event", "interactives", "localstorage", "set new lastvisit date");
+        };
 
     }
 }
@@ -58,9 +63,19 @@ function updateRecentMessages(lastvisit) {
 if (typeof (Storage) !== "undefined") {
     var lastvisit = localStorage.getItem('gv-last-visit');
     if (lastvisit) {
+           if (parentwindow.ga) {
+        parentwindow.ga('create', 'UA-78705427-1', 'auto');
+        parentwindow.ga('set', 'dimension3', 'theguardian.com' );
+        parentwindow.ga("send", "event", "interactives", "localstorage", "read lastvisit date");
+        }
         //    updateRecentMessages('Thu 6 Jul 2017');
         updateRecentMessages(lastvisit);
     } else {
+          if (parentwindow.ga) {
+        parentwindow.ga('create', 'UA-78705427-1', 'auto');
+        parentwindow.ga('set', 'dimension3', 'theguardian.com' );
+        parentwindow.ga("send", "event", "interactives", "localstorage", "set initial lastvisit date");
+        };
         console.log('setting last visit')
         localStorage.setItem('gv-last-visit', new Date())
     };
