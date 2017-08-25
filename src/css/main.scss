@@ -14,7 +14,7 @@ $jurisdiction-colour: #FDADBA;
 $trade-colour: #4BC6DF;
 $security-colour: #FF9B0B;
 $other-colour: #bdbdbd;
-
+$ireland-colour: #BB3A7F;
 
 .ios,
 .windows,
@@ -422,6 +422,10 @@ body {
         background-color: $trade-colour;
         color: #333;
     }
+        &.gv-topic-ireland {
+        background-color: $ireland-colour;
+        color: #fff;
+    }
     &.gv-topic-other {
         background-color: $other-colour;
         color: #333;
@@ -615,6 +619,10 @@ body {
     &.gv-topic-citizens {
 
         border-color: $citizens-colour;
+    }
+        &.gv-topic-ireland {
+
+        border-color: $ireland-colour;
     }
     &.gv-topic-trade {
 
