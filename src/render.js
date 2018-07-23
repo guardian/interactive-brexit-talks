@@ -6,6 +6,7 @@ import config from '../config.json'
 import twemoji from 'twemoji'
 //import fs from 'fs'
 import xmlparse from 'xml-parser'
+import {renderEmbeds} from './../src/renderembeds'
 
 function maketopicarray (quotes,topics) {
 
@@ -54,10 +55,13 @@ export async function render() {
      var quotes = data.sheets.quotes;
      var topics = data.sheets.topics;
      var furniture = data.sheets.furniture;
+     var embeds = data.sheets.embeds;
      var chat = maketopicarray(quotes,topics);
      //var xchat = twemoji.parse(chat);
      //console.log(xchat);
      var renderdata = {furniture,chat,related};
+     await renderEmbeds(chat,embeds);
+
      //console.log(renderdata);
      var html = Mustache.render(mainTemplate, renderdata);
      var ehtml = twemoji.parse(html);

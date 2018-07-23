@@ -1,0 +1,711 @@
+@import "mq";
+@import "fonts";
+@import "share";
+@import "related";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+$sequencing-colour: #FFBB00;
+$citizens-colour: #aad8f1;
+$financial-colour: #69D1CA;
+$jurisdiction-colour: #FDADBA;
+$trade-colour: #4BC6DF;
+$security-colour: #FF9B0B;
+$other-colour: #bdbdbd;
+$ireland-colour: #BB3A7F;
+
+.ios,
+.windows,
+.android {
+    .gv-header h1,
+    .gv-topic-intro-text-wrapper>h2 {
+        font-weight: 300;
+        margin: 0;
+    }
+}
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.gv-main-content,
+.gv-header-wrapper,
+.gv-quotes-wrapper {
+    margin-top: -10px!important;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #fff;
+    @each $bp in (tablet, desktop, wide) {
+        @include mq($bp) {
+            max-width: map-get($mq-breakpoints, $bp);
+        }
+    }
+}
+
+.gv-header-background {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: #005181;
+}
+
+.gv-quotes,
+.gv-topic-intro-text-wrapper,
+.gv-chat-wrapper,
+.gv-nav {
+    max-width: 750px!important; // margin: 0 auto;
+}
+
+.gv-topic-intro-text-wrapper {
+    padding: 0 10px;
+    @include mq($from: desktop) {
+        padding: 0 15px;
+    }
+}
+
+.gv-chat-wrapper {
+    margin: 0;
+    @include mq($from: desktop) {
+        margin: 0 15px!important;
+    }
+}
+
+.gv-chat-wrapper,
+.gv-intro,
+.gv-nav,
+.gv-header,
+.gv-quotes {
+
+    max-width: 620px; // float:left;
+    display: block;
+    position: relative;
+    padding: 0 10px;
+    margin-top: 10px;
+    z-index: 100;
+
+    @include mq(leftCol) {
+        margin-left: 160px;
+    }
+
+    @include mq(wide) {
+        margin-left: 240px;
+    }
+
+    @include mq(desktop, tablet) {
+        margin-left: 20px;
+    }
+}
+
+.gv-topic-intro-text-wrapper {
+    margin-left: 0;
+    @include mq(leftCol) {
+        // margin-left: 70px;
+    }
+
+    @include mq(wide) {
+        // margin-left: 150px;
+    }
+
+    @include mq(desktop, tablet) {
+        // margin-left: 20px;
+    }
+}
+
+.gv-topic-intro-wrapper,
+.gv-chat-outer-wrapper {
+    max-width: 1100px;
+    margin-bottom: 40px; // @include mq(leftCol) {
+    //     margin-left: 90px;
+    // }
+}
+
+.gv-chat-outer-wrapper {
+    border-radius: 0px 0px 8px 8px;
+    background-color: #efefef;
+    @include mq($until: desktop) {
+        margin-bottom: 30px;
+    }
+}
+
+.gv-topic-intro-wrapper {
+    padding: 5px 0 20px;
+}
+
+.gv-nav {
+    padding: 5px 10px;
+}
+
+.gv-intro {
+    max-width: 730px;
+    padding: 5px 10px;
+    margin-top: -75px;
+    @include mq($from: desktop) {
+        margin-top: -80px;
+    }
+}
+
+.gv-byline,
+.gv-datestamp {
+    display: inline-block;
+}
+
+.gv-datestamp {
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 14px;
+    border-left: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.gv-nav {
+    position: relative;
+    top: -90px;
+}
+
+.gv-nav-text {
+    @include fs-textSans(4);
+    margin-top: 30px;
+    
+}
+
+.header-share-container {
+    margin: 10px 0 20px;
+    background-color: #005689;
+}
+
+.gv-counter {
+    position: relative;
+    right: -55px;
+    top: 45px;
+    z-index: 10;
+    background-color: #ff4242;
+    border-radius: 20px;
+    height: 20px;
+    width: 25px;
+    color: #fff;
+    @include fs-data(2);
+    padding-top: 5px;
+}
+
+.gv-arrows {
+    width: 100vw;
+    top: -20px;
+
+    @include mq(leftCol) {
+        margin-left: -160px !important;
+    }
+
+    @include mq(wide) {
+        margin-left: -240px !important;
+    }
+
+    @include mq(desktop, tablet) {
+        margin-left: -20px !important;
+    }
+}
+
+.gv-header-wrapper {
+    background-color: #005689;
+    color: white;
+    padding-bottom: 60px;
+    &:after {
+        background-image: url("<%= path %>/assets/arrows.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        right: 0;
+        content: '';
+        width: 100%;
+        height: 100px;
+        vertical-align: baseline;
+        display: none;
+    }
+    img & {
+        width: 100%;
+    }
+}
+
+.gv-header .gv-standfirst {
+    @include mq($until: desktop) {
+        line-height: 23px;
+    }
+}
+
+.gv-header .gv-strap {
+    @include fs-headline(8);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 900;
+    @include mq($until: desktop) {
+        font-size: 16px;
+    }
+}
+
+.gv-groups-strap {
+    @include fs-textSans(4);
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gv-header {
+    padding-top: 10px;
+}
+
+.gv-header h1 {
+    @include fs-headline(8);
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 100;
+    @include mq($from: desktop) {
+        font-size: 54px;
+        line-height: 58px;
+    }
+}
+
+.gv-header p {
+    margin-top: 10px;
+}
+
+.gv-nav-emoji {
+    svg {
+        transition: all .2s linear-out;
+    }
+}
+
+.gv-nav-block {
+    display: inline-block;
+    @include fs-data(1);
+    text-align: center;
+    color: black; // margin: 0 15px 10px 0;
+    margin: -10px 3px 0px 0;
+    & a {
+        color: black;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            svg {
+                transform: scale(1.1, 1.1);
+            }
+        }
+    }
+    @include mq($from: desktop) {
+        margin: 0 10px 0px 0;
+    }
+}
+
+.gv-nav img {
+
+}
+
+.gv-topic-members:before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-image: url("<%= path %>/assets/avatar.svg");
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.gv-topic-activity:before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-image: url("<%= path %>/assets/time.svg");
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+
+.gv-topic-status {
+    margin-top: 5px;
+    padding-bottom: 3px;
+    @include fs-textSans(2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    span {
+        padding-right: 15px;
+    }
+}
+
+
+
+
+.gv-topic-intro {
+    font-size: 15px;
+    line-height: 23px;
+    margin-top: 5px;
+}
+
+.gv-topic-intro-wrapper {
+    border-radius: 8px 8px 0px 0px;
+    margin-bottom: -10px;
+}
+
+.gv-colour-emoji {
+    font-size: 40px;
+}
+
+.gv-nav-emoji {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    span {
+        position: relative;
+        top: 60px;
+        z-index: 9;
+    }
+
+    &.gv-topic-sequencing {
+        .svg-fill {
+            fill: $sequencing-colour;
+        }
+    }
+
+    &.gv-topic-citizens {
+        .svg-fill {
+            fill: $citizens-colour;
+        }
+    }
+    &.gv-topic-trade {
+        .svg-fill {
+            fill: $trade-colour;
+        }
+    }
+    &.gv-topic-other {
+        .svg-fill {
+            fill: $other-colour;
+        }
+    }
+    &.gv-topic-jurisdiction {
+        .svg-fill {
+            fill: $jurisdiction-colour;
+        }
+    }
+    &.gv-topic-financial {
+        .svg-fill {
+            fill: $financial-colour;
+        }
+    }
+    &.gv-topic-security {
+        .svg-fill {
+            fill: $security-colour;
+        }
+    }
+}
+
+.gv-topic-intro-wrapper {
+
+    &.gv-topic-sequencing {
+        background-color: $sequencing-colour;
+        color: #333;
+    }
+
+    &.gv-topic-citizens {
+        background-color: $citizens-colour;
+        color: #333;
+
+        svg .svg-fill {
+            fill: $citizens-colour;
+        }
+    }
+    &.gv-topic-trade {
+        background-color: $trade-colour;
+        color: #333;
+    }
+        &.gv-topic-ireland {
+        background-color: $ireland-colour;
+        color: #fff;
+    }
+    &.gv-topic-other {
+        background-color: $other-colour;
+        color: #333;
+    }
+    &.gv-topic-jurisdiction {
+        background-color: $jurisdiction-colour;
+        color: #333;
+    }
+    &.gv-topic-financial {
+        background-color: $financial-colour;
+        color: #333;
+    }
+    &.gv-topic-security {
+        background-color: $security-colour;
+        color: #333;
+    }
+}
+
+.emoji {
+    height: 16px;
+    display: inline;
+    padding: 0 2px;
+    position: relative;
+    top: 3px;
+}
+
+
+.gv-quotes {
+    overflow: hidden;
+    padding-top: 20px;
+    clear: both;
+    @include mq($from: leftCol) {
+        padding-left: 0px;
+    }
+}
+
+.gv-chat-wrapper {
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    clear: both;
+    @include mq($until: desktop) {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+}
+
+.gv-more-messages-wrap {
+    text-align: center;
+}
+
+.gv-more-messages {
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color:darkgrey;
+    color: white;
+    @include fs-textSans(3);
+    padding:3px 13px;
+    border-radius: 100px;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        background-color:#767676;
+    }
+}
+
+.gv-row-wrapper {
+    display: flex;
+    margin-bottom: 5px;
+
+    &.gv-team-UK {
+        flex-direction: row-reverse;
+    }
+    clear: both;
+    opacity: 1;
+      -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+
+}
+
+.gv-topic-intro-text-wrapper>h2 {
+    @include fs-headline(8);
+    font-weight: normal;
+    clear: both;
+    @include mq($until: desktop) {
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: lighter;
+    }
+}
+
+.gv-topic-intro-text-wrapper .gv-strap {
+    @include fs-textSans(2);
+}
+
+.gv-quotes>p {
+    clear: both;
+}
+
+.gv-hide {
+    display: none;
+}
+
+
+.gv-empty {
+    opacity: 0;
+       -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
+.gv-quick-empty {
+    opacity: 0;
+       -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .22s linear;
+}
+
+
+
+.gv-speaker,
+.gv-datestring {
+    color: #848484;
+    text-align: right;
+    .gv-team-UK & {
+        float: right;
+    }
+}
+
+.gv-speaker a,
+.gv-datestring a {
+    color: #848484;
+}
+
+.gv-chat-opens {
+    color: #333;
+    @include fs-textSans(4);
+    text-align: center;
+}
+
+
+
+.gv-speaker {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.gv-datestring {
+    display: inline-block;
+}
+
+.gv-team-UK .gv-mugshot-wrapper {
+    margin-left: 10px;
+}
+
+.gv-team-EU .gv-mugshot-wrapper {
+    margin-right: 10px;
+}
+
+
+.gv-mugshot-wrapper {
+    height: 100%;
+    top: 0px;
+    align-self: center;
+    position: relative;
+    margin-bottom: 0;
+    @include mq($until: desktop) {
+        align-self: flex-end;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+.gv-mugshot img {
+    position: relative;
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 40px;
+    float: right;
+    margin-top: 10px;
+    border: 2px solid;
+    &.gv-topic-citizens {
+
+        border-color: $citizens-colour;
+    }
+        &.gv-topic-ireland {
+
+        border-color: $ireland-colour;
+    }
+    &.gv-topic-trade {
+
+        border-color: $trade-colour;
+    }
+    &.gv-topic-other {
+
+        border-color: $other-colour;
+    }
+    &.gv-topic-jurisdiction {
+
+        border-color: $jurisdiction-colour;
+    }
+    &.gv-topic-financial {
+
+        border-color: $financial-colour;
+    }
+    &.gv-topic-security {
+
+        border-color: $security-colour;
+    }
+    &.gv-topic-sequencing {
+
+        border-color: $sequencing-colour;
+    }
+    @include mq($from: desktop) {
+        max-width: 60px;
+        max-height: 60px;
+    }
+}
+
+.gv-quote {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 4px 4px 4px 4px;
+    padding: 10px;
+}
+
+.gv-monochrome-emoji {
+    font-size: 6em;
+    background-color: white;
+    color: transparent;
+    text-shadow: 1px 1px 1px #444;
+}
+
+
+
+.gv-quote-wrapper {
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    padding-left: 5px;
+    line-height: 20px!important;
+     @include mq($until: tablet) { 
+        font-size: 16px;
+    }
+    @include fs-textSans(4);
+    &.gv-team-EU {
+        float: left; // border: 1px dotted royalblue;
+    }
+
+    &.gv-team-UK {
+        float: right; //border: 1px dotted red;
+    }
+}
+
+
+.c-advert {
+    display: flex;
+    justify-content: center;
+    background-color: guss-colour(white);
+
+    @include mq($from: tablet) {
+        .ad-slot--rendered {
+            margin: 20px 0 40px 0;
+        }
+    }
+}
+
+.c-advert {
+    margin-top: -10px;
+    margin-bottom: 30px;
+}

@@ -48,10 +48,12 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "browser-request": "^0.3.3",
     "fetch": "^1.1.0",
     "fs": "0.0.1-security",
     "mustache": "^2.3.0",
+    "node-sass": "^4.5.3",
     "request-promise": "^4.2.1",
     "twemoji": "^2.3.0",
     "xml-parser": "^1.2.1"
